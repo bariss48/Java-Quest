@@ -12,19 +12,14 @@ import java.util.Scanner;
  * @author macbook
  */
 public class Dog_go {
-    
-    
+        
       static void removeDuplicate(String str[], int n)
-    {
-       // Create a set using String characters
-    // excluding '\0'
+    {     
         int counter = 0;
         HashSet<String> s = new LinkedHashSet<>(n - 1);
-      // HashSet doesn't allow repetition of elements
         for (String x : str){
             s.add(x);
         } 
-        // Print content of the set
         for (String x : s){
         if(counter == 4){
             System.out.println();
@@ -35,9 +30,7 @@ public class Dog_go {
           System.out.print(x+' ');
           counter++;
         }
-        HashMap<String, Integer> count = new HashMap<>();
-        /*Store duplicates present
-        in the passed string */
+        HashMap<String, Integer> count = new HashMap<>();       
         for (int i = 0; i < str.length; i++) {
             if (!count.containsKey(str[i]))
                 count.put(str[i], 1);
@@ -47,7 +40,6 @@ public class Dog_go {
         }
          System.out.println();
          System.out.println("**************************");
-        /*Print duplicates in sorted order*/
         for (Map.Entry mapElement : count.entrySet()) {
             String key = (String)mapElement.getKey();
             int value = ((int)mapElement.getValue());
